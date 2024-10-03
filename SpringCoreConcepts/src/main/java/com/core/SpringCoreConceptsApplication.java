@@ -1,18 +1,18 @@
 package com.core;
 
-import com.core.couple.Animal;
-import com.core.couple.Cat;
-import com.core.couple.Dog;
-import com.core.couple.Person;
+import com.core.typeofinjection.Animal;
+import com.core.typeofinjection.Person;
+import com.core.typeofinjection.Samosa;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Primary;
 import test.Test;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"test", "com.core.couple"})
+@ComponentScan(basePackages = {"test", "com.core", "com.core.typeofinjection"})
 public class SpringCoreConceptsApplication {
 
 	public static void main(String[] args) {
@@ -32,7 +32,7 @@ public class SpringCoreConceptsApplication {
 		ApplicationContext context = SpringApplication.run(SpringCoreConceptsApplication.class, args);
 
 
-		Person personBean = context.getBean(Person.class);
+		Person personBean = context.getBean( Person.class);
 		personBean.playWithAnimal();
 
 
@@ -40,12 +40,18 @@ public class SpringCoreConceptsApplication {
 		testBean.testing();
 
 
-		Animal catBean = context.getBean("cat", Animal.class);
+		Animal catBean = context.getBean("t-cat", Animal.class);
 		catBean.play();
 
-		Animal dogBean = context.getBean("dog", Animal.class);
+		Animal dogBean = context.getBean("t-dog", Animal.class);
 		dogBean.play();
 
+
+
+
 	}
+
+
+
 
 }
