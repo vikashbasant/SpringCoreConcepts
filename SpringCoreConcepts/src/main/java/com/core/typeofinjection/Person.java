@@ -9,8 +9,6 @@ import org.springframework.stereotype.Component;
 public class Person {
 
     // =>> Filed/Property-Based Injection:
-
-
     @Autowired
     private Animal animal;
 
@@ -33,8 +31,9 @@ public class Person {
 
 
     // =>> Setter-Based Injection:
-//    @Autowired
+//    @Autowired // => using autowired on setter method:
 //    public void setAnimal(@Qualifier("t-cat") Animal animal) {
+//        System.out.println("setting animal... using setter injection");
 //        this.animal = animal;
 //    }
 
