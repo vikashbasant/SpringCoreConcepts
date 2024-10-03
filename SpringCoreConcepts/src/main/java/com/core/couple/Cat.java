@@ -1,9 +1,12 @@
 package com.core.couple;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
-@Component("cat")
+@Component
+//@Primary
+@Qualifier("cat")
 public class Cat implements Animal{
     @Override
     public void play() {
