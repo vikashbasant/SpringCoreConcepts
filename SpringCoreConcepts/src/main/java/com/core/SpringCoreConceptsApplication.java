@@ -1,6 +1,9 @@
 package com.core;
 
+import com.core.beanlifecycle.Car;
 import com.core.beanscope.Pepsi;
+import com.core.proxymode.Mobile;
+import com.core.proxymode.Recharge;
 import com.core.typeofinjection.Animal;
 import com.core.typeofinjection.Person;
 import com.core.typeofinjection.Samosa;
@@ -74,6 +77,26 @@ public class SpringCoreConceptsApplication {
 //		Pepsi pepsiBean1 = context.getBean(Pepsi.class);
 //		System.out.println(pepsiBean1); // Pepsi@ee82dd0d
 //		pepsiBean1.drink();
+
+
+
+//==============================Proxy Mode Example==========================================//
+
+//		Mobile mobileBean = context.getBean(Mobile.class);
+//		Recharge recharge = mobileBean.getRecharge();
+//		System.out.println(mobileBean);
+//		System.out.println(recharge);
+//
+//
+//		Mobile mobileBean1 = context.getBean(Mobile.class);
+//		Recharge recharge1 = mobileBean1.getRecharge();
+//		System.out.println(mobileBean1);
+//		System.out.println(recharge1);
+
+//==============================Bean Life Cycle===========================//
+
+		Car carBean = context.getBean(Car.class);
+		System.out.println("carBean: " + carBean);
 
 
 	}
